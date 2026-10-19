@@ -2764,6 +2764,7 @@ input[type=range].gp-focus {
     <div class="slider-row"><label data-i18n="settings.lang">语言</label><select class="lang-select" id="settingsLang"></select></div>
     <div class="slider-row"><label data-i18n="settings.music">音乐</label><input type="range" id="musicVol" min="0" max="100" value="50"><span class="val" id="musicVolVal">50</span></div>
     <div class="slider-row"><label data-i18n="settings.sfx">音效</label><input type="range" id="sfxVol" min="0" max="100" value="50"><span class="val" id="sfxVolVal">50</span></div>
+    <div class="slider-row"><label data-i18n="settings.display">显示</label><button class="fs-toggle" data-i18n="settings.windowed">窗口</button></div>
     <div class="modal-actions"><button id="settingsClose" class="primary" data-i18n="settings.done">完成</button></div>
   </div>
 </div>
@@ -2785,6 +2786,7 @@ input[type=range].gp-focus {
     <div class="slider-row"><label data-i18n="settings.lang">语言</label><select class="lang-select" id="pauseLang"></select></div>
     <div class="slider-row"><label data-i18n="settings.music">音乐</label><input type="range" id="pauseMusicVol" min="0" max="100" value="50"><span class="val" id="pauseMusicVolVal">50</span></div>
     <div class="slider-row"><label data-i18n="settings.sfx">音效</label><input type="range" id="pauseSfxVol" min="0" max="100" value="50"><span class="val" id="pauseSfxVolVal">50</span></div>
+    <div class="slider-row"><label data-i18n="settings.display">显示</label><button class="fs-toggle" data-i18n="settings.windowed">窗口</button></div>
     <div class="modal-actions">
       <button id="pauseResume" class="primary" data-i18n="pause.resume">继续游戏</button>
       <button id="pauseRestart" data-i18n="pause.restart">重新开始</button>
@@ -3580,13 +3582,56 @@ const G = {
 
 const canvas = $('#gameCanvas');
 const ctx = canvas.getContext('2d');
+const crtCanvasRef = document.getElementById('crtCanvas');
 const dpr = Math.min(window.devicePixelRatio||1, 2);
+// FIX_RATIO_V3
 function resizeCanvas(){
-  canvas.width = Math.floor(window.innerWidth*dpr);
-  canvas.height = Math.floor(window.innerHeight*dpr);
-  canvas.style.width = window.innerWidth+'px';
-  canvas.style.height = window.innerHeight+'px';
+  const W = window.innerWidth, H = window.innerHeight;
+  const TARGET = 16 / 9;
+  let cw, ch;
+  if(W / H > TARGET){ ch = H; cw = Math.floor(H * TARGET); }
+  else { cw = W; ch = Math.floor(W / TARGET); }
+  const left = Math.floor((W - cw) / 2);
+  const top  = Math.floor((H - ch) / 2);
+  canvas.width  = Math.floor(cw * dpr);
+  canvas.height = Math.floor(ch * dpr);
+  // 用 inline !important 压住 CSS 里 position:fixed;inset:0 / transform scale / clip-path
+  function setCanvasBox(el){
+    if(!el) return;
+    el.style.setProperty('width',         cw + 'px',  'important');
+    el.style.setProperty('height',        ch + 'px',  'important');
+    el.style.setProperty('left',          left + 'px','important');
+    el.style.setProperty('top',           top + 'px', 'important');
+    el.style.setProperty('right',         'auto',     'important');
+    el.style.setProperty('bottom',        'auto',     'important');
+    el.style.setProperty('transform',     'none',     'important');
+    el.style.setProperty('clip-path',     'none',     'important');
+    el.style.setProperty('border-radius', '0',        'important');
+  }
+  setCanvasBox(canvas);
+  if(crtCanvasRef){
+    crtCanvasRef.width  = Math.floor(cw * dpr);
+    crtCanvasRef.height = Math.floor(ch * dpr);
+    setCanvasBox(crtCanvasRef);
+  }
+  const hudEl = document.getElementById('hud');
+  if(hudEl){
+    hudEl.style.setProperty('width',     cw + 'px',  'important');
+    hudEl.style.setProperty('height',    ch + 'px',  'important');
+    hudEl.style.setProperty('left',      left + 'px','important');
+    hudEl.style.setProperty('top',       top + 'px', 'important');
+    hudEl.style.setProperty('right',     'auto',     'important');
+    hudEl.style.setProperty('bottom',    'auto',     'important');
+    hudEl.style.setProperty('clip-path', 'none',     'important');
+  }
+  // ★ 同步 WebGL viewport（若 gl 已初始化）
+  try {
+    if (typeof gl !== 'undefined' && gl && typeof crtProgram !== 'undefined' && crtProgram) {
+      gl.viewport(0, 0, crtCanvasRef.width, crtCanvasRef.height);
+    }
+  } catch(e){}
 }
+// FIX_VIEWPORT_V4
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
@@ -3705,6 +3750,7 @@ function entityAt(roomId, x, y){
   if(room){
     const o = room.objects[y] && room.objects[y][x];
     if(o && o.o === 'box') return {type:'box', color:o.color};
+    if(o && o.o === 'portal' && o.coveredBox) return {type:'box', color:o.coveredBox.color, onPortal:true};
   }
   return null;
 }
@@ -3914,17 +3960,29 @@ function doMove(dirName){
     const fBomb = fObj && fObj.o === 'bomb';
     const fPortal = fObj && fObj.o === 'portal';
     if(pushBox.type === 'box'){
-      nroom.objects[ny][nx] = null;
+      const fromCovered = !!pushBox.onPortal;
+      const pushColor = pushBox.color;
+      if(fromCovered){ delete nroom.objects[ny][nx].coveredBox; }
+      else { nroom.objects[ny][nx] = null; }
       if(fBomb){ bnroom.objects[bby][bbx] = null; AUDIO.sfxBomb(); }
       else if(fPortal){
         const pair = findPortalPair(fObj.code, bnroomId, bbx, bby);
-        if(pair && !entityAt(pair.roomId, pair.x, pair.y)){
+        /* FIX: 若出口被玩家头/身体占用，则箱子留在入口传送门上，不传送 */
+        const pairOccupied = pair ? !!entityAt(pair.roomId, pair.x, pair.y) : true;
+        if(pair && !pairOccupied){
           const pr = getRoomP(pair.roomId);
-          if(pr) pr.objects[pair.y][pair.x] = {o:'box', color:pushBox.color};
-          addEffect({kind:'portalFx', roomId:bnroomId, x:bbx, y:bby, color:fObj.color, t:0, dur:0.6});
-          AUDIO.sfxPortal();
+          const outObj = pr && pr.objects[pair.y] && pr.objects[pair.y][pair.x];
+          if(outObj && outObj.o === 'portal' && !outObj.coveredBox){
+            outObj.coveredBox = {color: pushColor};
+            addEffect({kind:'portalFx', roomId:pair.roomId, x:pair.x, y:pair.y, color:fObj.color, t:0, dur:0.6});
+          } else {
+            fObj.coveredBox = {color: pushColor};
+          }
+        } else {
+          fObj.coveredBox = {color: pushColor};
         }
-      } else bnroom.objects[bby][bbx] = {o:'box', color:pushBox.color};
+        AUDIO.sfxPortal();
+      } else bnroom.objects[bby][bbx] = {o:'box', color:pushColor};
     } else {
       const k = pushBox.k;
       const col = G.bodyColors[k-1];
@@ -3935,10 +3993,21 @@ function doMove(dirName){
       if(fBomb){ bnroom.objects[bby][bbx] = null; AUDIO.sfxBomb(); }
       else if(fPortal){
         const pair = findPortalPair(fObj.code, bnroomId, bbx, bby);
-        if(pair && !entityAt(pair.roomId, pair.x, pair.y)){
+        /* FIX: 若出口被玩家头/身体占用，则箱子留在入口传送门上，不传送 */
+        const pairOccupied = pair ? !!entityAt(pair.roomId, pair.x, pair.y) : true;
+        if(pair && !pairOccupied){
           const pr = getRoomP(pair.roomId);
-          if(pr) pr.objects[pair.y][pair.x] = {o:'box', color:col};
+          const outObj = pr && pr.objects[pair.y] && pr.objects[pair.y][pair.x];
+          if(outObj && outObj.o === 'portal' && !outObj.coveredBox){
+            outObj.coveredBox = {color: col};
+            addEffect({kind:'portalFx', roomId:pair.roomId, x:pair.x, y:pair.y, color:fObj.color, t:0, dur:0.6});
+          } else {
+            fObj.coveredBox = {color: col};
+          }
+        } else {
+          fObj.coveredBox = {color: col};
         }
+        AUDIO.sfxPortal();
       } else bnroom.objects[bby][bbx] = {o:'box', color:col};
       G.bodyColors = G.bodyColors.slice(0, k-1);
       G.path = G.path.slice(-k);
@@ -4219,7 +4288,7 @@ function drawHudMinimap(){
 }
 
 function renderTitle(t){
-  const W = window.innerWidth, H = window.innerHeight;
+  const W = canvas.width / dpr, H = canvas.height / dpr;
   ctx.setTransform(dpr,0,0,dpr,0,0);
   Starfield.update(W,H,1/60);
   Starfield.draw(ctx, W, H, t, 0, 0);
@@ -4365,7 +4434,7 @@ function drawHubIcon(c, action, cx, cy, sz) {
 }
 
 function renderHub(t){
-  const W = window.innerWidth, H = window.innerHeight;
+  const W = canvas.width / dpr, H = canvas.height / dpr;
   ctx.setTransform(dpr,0,0,dpr,0,0);
   Starfield.update(W,H,1/60);
   Starfield.draw(ctx, W, H, t, 0, 0);
@@ -4416,7 +4485,7 @@ function renderHub(t){
 }
 
 function renderGame(t){
-  const W = window.innerWidth, H = window.innerHeight;
+  const W = canvas.width / dpr, H = canvas.height / dpr;
   ctx.setTransform(dpr,0,0,dpr,0,0);
   Starfield.update(W,H,1/60);
   let bgX = 0, bgY = 0;
@@ -4522,7 +4591,10 @@ function drawRoomScene(room, headState, pathState, bodyColors, facing, now){
       if(o.o === 'bean') drawBean(ctx,px,py,CELL,o.color,now);
       else if(o.o === 'box') drawBox(ctx,px,py,CELL,o.color);
       else if(o.o === 'bomb') drawBomb(ctx,px,py,CELL,now);
-      else if(o.o === 'portal') drawPortal(ctx,px,py,CELL,o.color,now);
+      else if(o.o === 'portal'){
+        drawPortal(ctx,px,py,CELL,o.color,now);
+        if(o.coveredBox) drawBox(ctx,px,py,CELL,o.coveredBox.color);
+      }
     }
   }
   const startIdx = pathState.length-1-bodyColors.length;
@@ -5021,15 +5093,17 @@ function initWebGL() {
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
 }
 
+// FIX_VIEWPORT_V4
 function renderCRT(time) {
     if (!gl || !crtProgram) return;
     
-    // 确保底层被渲染的 gameCanvas 宽高不为零
+    // 同步缓冲区尺寸
     if (crtCanvas.width !== gameCanvas.width || crtCanvas.height !== gameCanvas.height) {
         crtCanvas.width = gameCanvas.width;
         crtCanvas.height = gameCanvas.height;
-        gl.viewport(0, 0, crtCanvas.width, crtCanvas.height);
     }
+    // ★ 每帧无条件重设 viewport —— WebGL 不会在 canvas 尺寸变化后自动更新 viewport
+    gl.viewport(0, 0, crtCanvas.width, crtCanvas.height);
     
     gl.bindTexture(gl.TEXTURE_2D, crtTex);
     gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
@@ -6276,6 +6350,47 @@ const GamepadManager = {
 
 GamepadManager.init();
 window.GamepadManager = GamepadManager;
+if(typeof resizeCanvas === 'function'){ resizeCanvas(); }
+
+/* ===== 16:9 全屏切换 ===== */
+(function(){
+  function updateFSButtons(){
+    const isFS = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    const key = isFS ? 'settings.fullscreenOn' : 'settings.windowed';
+    const label = (window.t ? window.t(key) : (isFS ? 'Fullscreen' : 'Windowed'));
+    document.querySelectorAll('.fs-toggle').forEach(btn => {
+      btn.textContent = label;
+      btn.dataset.mode = isFS ? 'fullscreen' : 'windowed';
+    });
+  }
+  function toggleFS(){
+    const isFS = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    if(!isFS){
+      const el = document.documentElement;
+      if(el.requestFullscreen) el.requestFullscreen().catch(()=>{});
+      else if(el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+    } else {
+      if(document.exitFullscreen) document.exitFullscreen().catch(()=>{});
+      else if(document.webkitExitFullscreen) document.webkitExitFullscreen();
+    }
+  }
+  function onFSChange(){
+    updateFSButtons();
+    setTimeout(function(){ window.dispatchEvent(new Event('resize')); }, 120);
+  }
+  document.addEventListener('fullscreenchange', onFSChange);
+  document.addEventListener('webkitfullscreenchange', onFSChange);
+  document.addEventListener('click', function(e){
+    if(e.target && e.target.classList && e.target.classList.contains('fs-toggle')){
+      e.preventDefault();
+      try { if(typeof AUDIO !== 'undefined'){ AUDIO.resume(); AUDIO.sfxClick(); } } catch(err){}
+      toggleFS();
+    }
+  }, true);
+  window.__updateFSButtons = updateFSButtons;
+  window.__toggleFS = toggleFS;
+  setTimeout(updateFSButtons, 300);
+})();
 
 // 主循环中轮询
 const _origLoop = window.loop;
@@ -6345,3 +6460,42 @@ function refreshHowtoDevice() {
 window.refreshHowtoDevice = refreshHowtoDevice;</script>
 </body>
 </html>
+<!-- AUTO:16:9-FULLSCREEN-I18N -->
+<script>
+(function(){
+  var extra = {
+    'zh-CN':  {'settings.display':'显示','settings.windowed':'窗口','settings.fullscreenOn':'全屏'},
+    'zh-TW':  {'settings.display':'顯示','settings.windowed':'視窗','settings.fullscreenOn':'全螢幕'},
+    'en':     {'settings.display':'Display','settings.windowed':'Windowed','settings.fullscreenOn':'Fullscreen'},
+    'de':     {'settings.display':'Anzeige','settings.windowed':'Fenster','settings.fullscreenOn':'Vollbild'},
+    'fr':     {'settings.display':'Affichage','settings.windowed':'Fenêtré','settings.fullscreenOn':'Plein écran'},
+    'it':     {'settings.display':'Schermo','settings.windowed':'Finestra','settings.fullscreenOn':'Schermo intero'},
+    'es':     {'settings.display':'Pantalla','settings.windowed':'Ventana','settings.fullscreenOn':'Pantalla completa'},
+    'ru':     {'settings.display':'Экран','settings.windowed':'В окне','settings.fullscreenOn':'Полный экран'},
+    'tr':     {'settings.display':'Ekran','settings.windowed':'Pencere','settings.fullscreenOn':'Tam Ekran'},
+    'th':     {'settings.display':'การแสดงผล','settings.windowed':'หน้าต่าง','settings.fullscreenOn':'เต็มหน้าจอ'},
+    'id':     {'settings.display':'Tampilan','settings.windowed':'Jendela','settings.fullscreenOn':'Layar Penuh'},
+    'vi':     {'settings.display':'Hiển thị','settings.windowed':'Cửa sổ','settings.fullscreenOn':'Toàn màn hình'},
+    'ja':     {'settings.display':'表示','settings.windowed':'ウィンドウ','settings.fullscreenOn':'フルスクリーン'},
+    'ko':     {'settings.display':'화면','settings.windowed':'창 모드','settings.fullscreenOn':'전체 화면'},
+    'ar':     {'settings.display':'العرض','settings.windowed':'نافذة','settings.fullscreenOn':'ملء الشاشة'},
+    'pt-BR':  {'settings.display':'Exibição','settings.windowed':'Janela','settings.fullscreenOn':'Tela cheia'}
+  };
+  if(window.I18N){
+    for(var lang in extra){
+      if(window.I18N[lang]){
+        for(var k in extra[lang]) window.I18N[lang][k] = extra[lang][k];
+      }
+    }
+  }
+  var cur = 'zh-CN';
+  try {
+    var d = JSON.parse(localStorage.getItem('snack_the_box_v1') || '{}');
+    if(d && d.lang) cur = d.lang;
+  } catch(e){}
+  if(window.applyLanguage){ try { window.applyLanguage(cur); } catch(e){} }
+  if(window.__updateFSButtons){ setTimeout(window.__updateFSButtons, 200); }
+})();
+</script>
+
+<!-- PATCH_TAG:PORTAL_FIX_V2_GAME -->
