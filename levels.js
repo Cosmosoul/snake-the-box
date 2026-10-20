@@ -6208,7 +6208,7 @@ window.LEVELS = {
                 },
                 "color": "blue",
                 "_glow": 1,
-                "_glowT": 264.95259999999996
+                "_glowT": 16223.3929
               },
               null,
               {
@@ -6220,7 +6220,7 @@ window.LEVELS = {
                 },
                 "color": "green",
                 "_glow": 1,
-                "_glowT": 264.95259999999996
+                "_glowT": 16223.3929
               },
               null,
               null
@@ -6237,7 +6237,7 @@ window.LEVELS = {
                 },
                 "color": "green",
                 "_glow": 1,
-                "_glowT": 264.95259999999996
+                "_glowT": 16223.3929
               },
               null,
               null,
@@ -6376,9 +6376,7 @@ window.LEVELS = {
                 "color": "red"
               },
               null,
-              {
-                "o": "bomb"
-              },
+              null,
               null,
               null,
               null
@@ -6419,9 +6417,7 @@ window.LEVELS = {
               null,
               null,
               null,
-              {
-                "o": "bomb"
-              },
+              null,
               {
                 "o": "bomb"
               },
@@ -6481,9 +6477,7 @@ window.LEVELS = {
               null,
               null,
               null,
-              {
-                "t": "wall"
-              },
+              null,
               null
             ],
             [
@@ -6619,6 +6613,293 @@ window.LEVELS = {
           "white",
           "white"
         ]
+      },
+      "passageWidth": 1
+    },
+    {
+      "id": "lv_47ye6q",
+      "name": "世界箱微难",
+      "rooms": [
+        {
+          "id": "r_u99dsf",
+          "w": 6,
+          "h": 6,
+          "terrain": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "target",
+                "color": "blue"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "blue"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "o": "worldbox",
+                "roomId": "r_u99dsf",
+                "frozenPos": {
+                  "x": 3,
+                  "y": 2
+                },
+                "color": "blue",
+                "_glow": 1,
+                "_glowT": 1085.2645
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "o": "worldbox",
+                "roomId": "r_4a1cim",
+                "frozenPos": {
+                  "x": 2,
+                  "y": 3
+                },
+                "color": "red",
+                "_glow": 1,
+                "_glowT": 1085.2645
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "o": "spawn"
+              },
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        },
+        {
+          "id": "r_4a1cim",
+          "w": 6,
+          "h": 6,
+          "terrain": [
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              null,
+              {
+                "t": "crumble",
+                "n": 2
+              },
+              null
+            ],
+            [
+              null,
+              {
+                "t": "target",
+                "color": "green"
+              },
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "green"
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        }
+      ],
+      "layout": [
+        {
+          "roomId": "r_u99dsf",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "roomId": "r_4a1cim",
+          "x": -480,
+          "y": 480
+        }
+      ],
+      "start": {
+        "roomId": "r_u99dsf",
+        "x": 1,
+        "y": 4,
+        "facing": "right",
+        "bodyColors": []
       },
       "passageWidth": 1
     }
