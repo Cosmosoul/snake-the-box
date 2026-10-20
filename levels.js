@@ -1,10 +1,229 @@
 /* levels.js */
 window.LEVELS = {
-  "version": 1,
+  "version": 2,
+  "themes": [
+    {
+      "id": "theme_26f43a7ce0",
+      "name": {
+        "zh-CN": "学习",
+        "zh-TW": "學習",
+        "en": "Learning",
+        "ja": "学習",
+        "ko": "학습",
+        "de": "Lernen",
+        "fr": "Apprentissage",
+        "it": "Apprendimento",
+        "es": "Aprendizaje",
+        "ru": "Обучение",
+        "pt-BR": "Aprendizagem",
+        "tr": "Öğrenme",
+        "th": "การเรียนรู้",
+        "id": "Pembelajaran",
+        "vi": "Học tập",
+        "ar": "التعلم"
+      },
+      "order": 0
+    },
+    {
+      "id": "theme_938836ba18",
+      "name": {
+        "zh-CN": "绵延",
+        "zh-TW": "綿延",
+        "en": "Continuity",
+        "ja": "連綿",
+        "ko": "면면히 이어짐",
+        "de": "Kontinuität",
+        "fr": "Continuité",
+        "it": "Continuità",
+        "es": "Continuidad",
+        "ru": "Непрерывность",
+        "pt-BR": "Continuidade",
+        "tr": "Süreklilik",
+        "th": "ความต่อเนื่อง",
+        "id": "Kesinambungan",
+        "vi": "Sự liên miên",
+        "ar": "الامتداد"
+      },
+      "order": 1
+    },
+    {
+      "id": "theme_3afe7b537a",
+      "name": {
+        "zh-CN": "数字",
+        "zh-TW": "數字",
+        "en": "Number",
+        "ja": "数字",
+        "ko": "숫자",
+        "de": "Zahl",
+        "fr": "Nombre",
+        "it": "Numero",
+        "es": "Número",
+        "ru": "Число",
+        "pt-BR": "Número",
+        "tr": "Sayı",
+        "th": "ตัวเลข",
+        "id": "Angka",
+        "vi": "Số",
+        "ar": "رقم"
+      },
+      "order": 2
+    },
+    {
+      "id": "theme_250320848c",
+      "name": {
+        "zh-CN": "传送",
+        "zh-TW": "傳送",
+        "en": "Transmission",
+        "ja": "伝送",
+        "ko": "전송",
+        "de": "Übertragung",
+        "fr": "Transmission",
+        "it": "Trasmissione",
+        "es": "Transmisión",
+        "ru": "Передача",
+        "pt-BR": "Transmissão",
+        "tr": "İletim",
+        "th": "การส่ง",
+        "id": "Transmisi",
+        "vi": "Truyền",
+        "ar": "نقل"
+      },
+      "order": 3
+    },
+    {
+      "id": "theme_cf1a8231a0",
+      "name": {
+        "zh-CN": "房间",
+        "zh-TW": "房間",
+        "en": "Room",
+        "ja": "部屋",
+        "ko": "방",
+        "de": "Zimmer",
+        "fr": "Chambre",
+        "it": "Stanza",
+        "es": "Habitación",
+        "ru": "Комната",
+        "pt-BR": "Quarto",
+        "tr": "Oda",
+        "th": "ห้อง",
+        "id": "Kamar",
+        "vi": "Phòng",
+        "ar": "غرفة"
+      },
+      "order": 4
+    },
+    {
+      "id": "theme_1ac8fc2493",
+      "name": {
+        "zh-CN": "检查",
+        "zh-TW": "檢查",
+        "en": "Inspection",
+        "ja": "検査",
+        "ko": "검사",
+        "de": "Prüfung",
+        "fr": "Inspection",
+        "it": "Ispezione",
+        "es": "Inspección",
+        "ru": "Проверка",
+        "pt-BR": "Inspeção",
+        "tr": "Denetim",
+        "th": "การตรวจสอบ",
+        "id": "Pemeriksaan",
+        "vi": "Kiểm tra",
+        "ar": "فحص"
+      },
+      "order": 5
+    },
+    {
+      "id": "theme_cea7d54089",
+      "name": {
+        "zh-CN": "世界",
+        "zh-TW": "世界",
+        "en": "World",
+        "ja": "世界",
+        "ko": "세계",
+        "de": "Welt",
+        "fr": "Monde",
+        "it": "Mondo",
+        "es": "Mundo",
+        "ru": "Мир",
+        "pt-BR": "Mundo",
+        "tr": "Dünya",
+        "th": "โลก",
+        "id": "Dunia",
+        "vi": "Thế giới",
+        "ar": "العالم"
+      },
+      "order": 6
+    },
+    {
+      "id": "theme_1aec9722b6",
+      "name": {
+        "zh-CN": "对称",
+        "zh-TW": "對稱",
+        "en": "Symmetry",
+        "ja": "対称",
+        "ko": "대칭",
+        "de": "Symmetrie",
+        "fr": "Symétrie",
+        "it": "Simmetria",
+        "es": "Simetría",
+        "ru": "Симметрия",
+        "pt-BR": "Simetria",
+        "tr": "Simetri",
+        "th": "ความสมมาตร",
+        "id": "Simetri",
+        "vi": "Đối xứng",
+        "ar": "التماثل"
+      },
+      "order": 7
+    },
+    {
+      "id": "theme_211a687330",
+      "name": {
+        "zh-CN": "综合",
+        "zh-TW": "綜合",
+        "en": "Synthesis",
+        "ja": "総合",
+        "ko": "종합",
+        "de": "Synthese",
+        "fr": "Synthèse",
+        "it": "Sintesi",
+        "es": "Síntesis",
+        "ru": "Синтез",
+        "pt-BR": "Síntese",
+        "tr": "Sentez",
+        "th": "การสังเคราะห์",
+        "id": "Sintesis",
+        "vi": "Tổng hợp",
+        "ar": "التوليف"
+      },
+      "order": 8
+    }
+  ],
   "levels": [
     {
       "id": "lv_tq8ppn",
-      "name": "推箱引入",
+      "themeId": "theme_26f43a7ce0",
+      "orderInTheme": 0,
+      "name": {
+        "zh-CN": "关卡1",
+        "zh-TW": "關卡1",
+        "en": "Level 1",
+        "ja": "レベル1",
+        "ko": "레벨 1",
+        "de": "Level 1",
+        "fr": "Niveau 1",
+        "it": "Livello 1",
+        "es": "Nivel 1",
+        "ru": "Уровень 1",
+        "pt-BR": "Nível 1",
+        "tr": "Seviye 1",
+        "th": "ด่านที่ 1",
+        "id": "Level 1",
+        "vi": "Màn 1",
+        "ar": "المستوى 1"
+      },
       "rooms": [
         {
           "id": "r_q5r2q5",
@@ -108,11 +327,31 @@ window.LEVELS = {
         "facing": "right",
         "bodyColors": []
       },
-      "passageWidth": 3
+      "passageWidth": 3,
+      "shadow": null
     },
     {
       "id": "lv_ob5pw0",
-      "name": "吃豆子引入",
+      "themeId": "theme_26f43a7ce0",
+      "orderInTheme": 1,
+      "name": {
+        "zh-CN": "关卡2",
+        "zh-TW": "關卡2",
+        "en": "Level 2",
+        "ja": "レベル2",
+        "ko": "레벨 2",
+        "de": "Level 2",
+        "fr": "Niveau 2",
+        "it": "Livello 2",
+        "es": "Nivel 2",
+        "ru": "Уровень 2",
+        "pt-BR": "Nível 2",
+        "tr": "Seviye 2",
+        "th": "ด่านที่ 2",
+        "id": "Level 2",
+        "vi": "Màn 2",
+        "ar": "المستوى 2"
+      },
       "rooms": [
         {
           "id": "r_tmbdl0",
@@ -245,16 +484,22 @@ window.LEVELS = {
         "facing": "right",
         "bodyColors": []
       },
-      "passageWidth": 3
+      "passageWidth": 3,
+      "shadow": null
     },
     {
       "id": "lv_d2tcci",
-      "name": "吃豆子微难",
+      "themeId": "theme_26f43a7ce0",
+      "orderInTheme": 2,
+      "name": {
+        "zh-CN": "学习3",
+        "en": "学习3"
+      },
       "rooms": [
         {
           "id": "r_wkkl31",
-          "w": 8,
-          "h": 8,
+          "w": 7,
+          "h": 7,
           "terrain": [
             [
               null,
@@ -263,32 +508,43 @@ window.LEVELS = {
               null,
               null,
               null,
-              null,
               null
             ],
             [
               null,
               null,
               null,
-              null,
-              null,
-              null,
-              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
               null
             ],
             [
               null,
               null,
               null,
-              null,
-              null,
-              null,
-              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
               null
             ],
             [
               null,
-              null,
+              {
+                "t": "wall"
+              },
               null,
               {
                 "t": "target",
@@ -299,12 +555,13 @@ window.LEVELS = {
                 "color": "red"
               },
               null,
-              null,
               null
             ],
             [
               null,
-              null,
+              {
+                "t": "wall"
+              },
               null,
               null,
               {
@@ -312,31 +569,22 @@ window.LEVELS = {
                 "color": "blue"
               },
               null,
-              null,
               null
             ],
             [
               null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
               null,
               null,
               null,
               null
             ],
             [
-              null,
               null,
               null,
               null,
@@ -354,6 +602,16 @@ window.LEVELS = {
               null,
               null,
               null,
+              null
+            ],
+            [
+              null,
+              {
+                "o": "spawn"
+              },
+              null,
+              null,
+              null,
               null,
               null
             ],
@@ -364,39 +622,27 @@ window.LEVELS = {
               null,
               null,
               null,
-              null,
               null
             ],
             [
               null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
               null,
               null,
               null,
               null,
               null,
               {
-                "o": "spawn"
+                "o": "bean",
+                "color": "blue"
               },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
               null
             ],
             [
@@ -412,24 +658,9 @@ window.LEVELS = {
                 "o": "bean",
                 "color": "red"
               },
-              null,
               null
             ],
             [
-              null,
-              {
-                "o": "bean",
-                "color": "blue"
-              },
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
               null,
               null,
               null,
@@ -450,16 +681,24 @@ window.LEVELS = {
       ],
       "start": {
         "roomId": "r_wkkl31",
-        "x": 6,
-        "y": 2,
-        "facing": "right",
-        "bodyColors": []
+        "x": 1,
+        "y": 1,
+        "facing": "left",
+        "bodyColors": [
+          "white"
+        ]
       },
-      "passageWidth": 3
+      "passageWidth": 3,
+      "shadow": null
     },
     {
       "id": "lv_st2tz6",
-      "name": "截断引入",
+      "themeId": "theme_26f43a7ce0",
+      "orderInTheme": 3,
+      "name": {
+        "zh-CN": "学习4",
+        "en": "学习4"
+      },
       "rooms": [
         {
           "id": "r_v7t4vc",
@@ -610,11 +849,17 @@ window.LEVELS = {
         "facing": "right",
         "bodyColors": []
       },
-      "passageWidth": 3
+      "passageWidth": 3,
+      "shadow": null
     },
     {
       "id": "lv_sl6306",
-      "name": "换房间引入",
+      "themeId": "theme_26f43a7ce0",
+      "orderInTheme": 4,
+      "name": {
+        "zh-CN": "学习5",
+        "en": "学习5"
+      },
       "rooms": [
         {
           "id": "r_dsqwqe",
@@ -855,11 +1100,2546 @@ window.LEVELS = {
         "facing": "right",
         "bodyColors": []
       },
-      "passageWidth": 3
+      "passageWidth": 3,
+      "shadow": null
+    },
+    {
+      "id": "lv_0ls4vv",
+      "themeId": "theme_938836ba18",
+      "orderInTheme": 0,
+      "name": {
+        "zh-CN": "绵延1",
+        "en": "绵延1"
+      },
+      "rooms": [
+        {
+          "id": "r_glvo7g",
+          "w": 6,
+          "h": 7,
+          "terrain": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              null,
+              {
+                "t": "wall"
+              }
+            ],
+            [
+              null,
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "o": "spawn"
+              },
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "o": "box",
+                "color": "red"
+              },
+              null,
+              {
+                "o": "bomb"
+              },
+              null
+            ],
+            [
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null,
+              {
+                "o": "bean",
+                "color": "blue"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        },
+        {
+          "id": "r_9tf2hx",
+          "w": 8,
+          "h": 7,
+          "terrain": [
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "target",
+                "color": "white"
+              },
+              {
+                "t": "target",
+                "color": "white"
+              },
+              {
+                "t": "wall"
+              },
+              null,
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "target",
+                "color": "blue"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "target",
+                "color": "white"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "o": "bomb"
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        }
+      ],
+      "layout": [
+        {
+          "roomId": "r_glvo7g",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "roomId": "r_9tf2hx",
+          "x": 480,
+          "y": 0
+        }
+      ],
+      "start": {
+        "roomId": "r_glvo7g",
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "bodyColors": []
+      },
+      "passageWidth": 3,
+      "shadow": null
+    },
+    {
+      "id": "lv_0k1yxm",
+      "themeId": "theme_938836ba18",
+      "orderInTheme": 1,
+      "name": {
+        "zh-CN": "绵延2",
+        "en": "绵延2"
+      },
+      "rooms": [
+        {
+          "id": "r_tc6i1j",
+          "w": 10,
+          "h": 7,
+          "terrain": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "target",
+                "color": "blue"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "target",
+                "color": "green"
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              null,
+              {
+                "t": "target",
+                "color": "red"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "blue"
+              },
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null,
+              {
+                "o": "box",
+                "color": "red"
+              },
+              null,
+              {
+                "o": "bean",
+                "color": "green"
+              },
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "o": "spawn"
+              },
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        }
+      ],
+      "layout": [
+        {
+          "roomId": "r_tc6i1j",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "start": {
+        "roomId": "r_tc6i1j",
+        "x": 1,
+        "y": 5,
+        "facing": "right",
+        "bodyColors": []
+      },
+      "passageWidth": 3,
+      "shadow": null
+    },
+    {
+      "id": "lv_82lqfg",
+      "themeId": "theme_3afe7b537a",
+      "orderInTheme": 0,
+      "name": {
+        "zh-CN": "数字1",
+        "en": "数字1"
+      },
+      "rooms": [
+        {
+          "id": "r_379khy",
+          "w": 6,
+          "h": 5,
+          "terrain": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "door",
+                "n": 3
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "o": "bean",
+                "color": "blue"
+              },
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "o": "spawn"
+              },
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "red"
+              },
+              {
+                "o": "bomb"
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        },
+        {
+          "id": "r_kr4mgd",
+          "w": 7,
+          "h": 5,
+          "terrain": [
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              {
+                "t": "target",
+                "color": "red"
+              },
+              null,
+              null,
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              {
+                "t": "target",
+                "color": "blue"
+              },
+              {
+                "t": "target",
+                "color": "red"
+              },
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "red"
+              },
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        }
+      ],
+      "layout": [
+        {
+          "roomId": "r_379khy",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "roomId": "r_kr4mgd",
+          "x": 480,
+          "y": 0
+        }
+      ],
+      "start": {
+        "roomId": "r_379khy",
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "bodyColors": []
+      },
+      "passageWidth": 3,
+      "shadow": null
+    },
+    {
+      "id": "lv_c4pz27",
+      "themeId": "theme_3afe7b537a",
+      "orderInTheme": 1,
+      "name": {
+        "zh-CN": "数字2",
+        "en": "数字2"
+      },
+      "rooms": [
+        {
+          "id": "r_qwjng2",
+          "w": 5,
+          "h": 5,
+          "terrain": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              null,
+              {
+                "t": "crumble",
+                "n": 3
+              },
+              null
+            ],
+            [
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              {
+                "t": "crumble",
+                "n": 3
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "o": "spawn"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        }
+      ],
+      "layout": [
+        {
+          "roomId": "r_qwjng2",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "start": {
+        "roomId": "r_qwjng2",
+        "x": 3,
+        "y": 1,
+        "facing": "right",
+        "bodyColors": [
+          "white",
+          "white"
+        ]
+      },
+      "passageWidth": 3,
+      "shadow": null
+    },
+    {
+      "id": "lv_z1uhhd",
+      "themeId": "theme_3afe7b537a",
+      "orderInTheme": 2,
+      "name": {
+        "zh-CN": "数字3",
+        "en": "数字3"
+      },
+      "rooms": [
+        {
+          "id": "r_syrw9o",
+          "w": 6,
+          "h": 6,
+          "terrain": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "wall"
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "crumble",
+                "n": 3
+              },
+              null
+            ],
+            [
+              null,
+              {
+                "t": "crumble",
+                "n": 3
+              },
+              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              }
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              {
+                "o": "bean",
+                "color": "red"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "o": "spawn"
+              },
+              {
+                "o": "bean",
+                "color": "blue"
+              },
+              {
+                "o": "bomb"
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        },
+        {
+          "id": "r_a34sdx",
+          "w": 4,
+          "h": 6,
+          "terrain": [
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "target",
+                "color": "blue"
+              },
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "t": "crumble",
+                "n": 3
+              },
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        }
+      ],
+      "layout": [
+        {
+          "roomId": "r_syrw9o",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "roomId": "r_a34sdx",
+          "x": 480,
+          "y": 0
+        }
+      ],
+      "start": {
+        "roomId": "r_syrw9o",
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "bodyColors": []
+      },
+      "passageWidth": 3,
+      "shadow": null
+    },
+    {
+      "id": "lv_mahyt5",
+      "themeId": "theme_3afe7b537a",
+      "orderInTheme": 3,
+      "name": {
+        "zh-CN": "数字4",
+        "en": "数字4"
+      },
+      "rooms": [
+        {
+          "id": "r_94qluh",
+          "w": 5,
+          "h": 11,
+          "terrain": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              null,
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "t": "crumble",
+                "n": 7
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              {
+                "t": "target",
+                "color": "white"
+              },
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              {
+                "t": "target",
+                "color": "white"
+              },
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "o": "spawn"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "blue"
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              {
+                "o": "box",
+                "color": "white"
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        }
+      ],
+      "layout": [
+        {
+          "roomId": "r_94qluh",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "start": {
+        "roomId": "r_94qluh",
+        "x": 1,
+        "y": 1,
+        "facing": "right",
+        "bodyColors": []
+      },
+      "passageWidth": 3,
+      "shadow": null
+    },
+    {
+      "id": "lv_ko4z0t",
+      "themeId": "theme_250320848c",
+      "orderInTheme": 0,
+      "name": {
+        "zh-CN": "传送1",
+        "en": "传送1"
+      },
+      "rooms": [
+        {
+          "id": "r_eh43hh",
+          "w": 6,
+          "h": 6,
+          "terrain": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "t": "target",
+                "color": "blue"
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              {
+                "t": "target",
+                "color": "white"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null
+            ],
+            [
+              null,
+              {
+                "o": "spawn"
+              },
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "o": "portal",
+                "code": "A",
+                "color": "red"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        },
+        {
+          "id": "r_wi9pzd",
+          "w": 6,
+          "h": 6,
+          "terrain": [
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "blue"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "o": "portal",
+                "code": "A",
+                "color": "red"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        }
+      ],
+      "layout": [
+        {
+          "roomId": "r_eh43hh",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "roomId": "r_wi9pzd",
+          "x": 560,
+          "y": 0
+        }
+      ],
+      "start": {
+        "roomId": "r_eh43hh",
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "bodyColors": []
+      },
+      "passageWidth": 3,
+      "shadow": null
+    },
+    {
+      "id": "lv_oi0ibg",
+      "themeId": "theme_250320848c",
+      "orderInTheme": 1,
+      "name": {
+        "zh-CN": "传送2",
+        "en": "传送2"
+      },
+      "rooms": [
+        {
+          "id": "r_syzsb1",
+          "w": 6,
+          "h": 6,
+          "terrain": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "target",
+                "color": "blue"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "o": "portal",
+                "code": "B",
+                "color": "blue"
+              },
+              null
+            ],
+            [
+              null,
+              {
+                "o": "spawn"
+              },
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "o": "portal",
+                "code": "A",
+                "color": "red"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        },
+        {
+          "id": "r_q4phwl",
+          "w": 6,
+          "h": 6,
+          "terrain": [
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "o": "portal",
+                "code": "A",
+                "color": "red"
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "o": "box",
+                "color": "blue"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "o": "portal",
+                "code": "B",
+                "color": "blue"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        }
+      ],
+      "layout": [
+        {
+          "roomId": "r_syzsb1",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "roomId": "r_q4phwl",
+          "x": 720,
+          "y": 0
+        }
+      ],
+      "start": {
+        "roomId": "r_syzsb1",
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "bodyColors": []
+      },
+      "passageWidth": 3,
+      "shadow": null
+    },
+    {
+      "id": "lv_6y5mr0",
+      "themeId": "theme_250320848c",
+      "orderInTheme": 2,
+      "name": {
+        "zh-CN": "传送3",
+        "en": "传送3"
+      },
+      "rooms": [
+        {
+          "id": "r_q0wa2y",
+          "w": 8,
+          "h": 8,
+          "terrain": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              {
+                "t": "target",
+                "color": "white"
+              },
+              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "target",
+                "color": "green"
+              },
+              null
+            ],
+            [
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "green"
+              },
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "o": "spawn"
+              },
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "o": "bomb"
+              },
+              {
+                "o": "portal",
+                "code": "A",
+                "color": "red"
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "o": "bean",
+                "color": "blue"
+              },
+              null,
+              null,
+              null,
+              null,
+              {
+                "o": "bomb"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "o": "bomb"
+              },
+              null,
+              null,
+              {
+                "o": "bomb"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        },
+        {
+          "id": "r_i20qts",
+          "w": 6,
+          "h": 6,
+          "terrain": [
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              {
+                "t": "wall"
+              },
+              null,
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "target",
+                "color": "blue"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "o": "bomb"
+              },
+              {
+                "o": "bomb"
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "green"
+              },
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "o": "portal",
+                "code": "A",
+                "color": "red"
+              },
+              null,
+              {
+                "o": "bomb"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        }
+      ],
+      "layout": [
+        {
+          "roomId": "r_q0wa2y",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "roomId": "r_i20qts",
+          "x": 720,
+          "y": 0
+        }
+      ],
+      "start": {
+        "roomId": "r_q0wa2y",
+        "x": 3,
+        "y": 3,
+        "facing": "right",
+        "bodyColors": [
+          "white",
+          "white"
+        ]
+      },
+      "passageWidth": 3,
+      "shadow": null
     },
     {
       "id": "lv_f52lvu",
-      "name": "换房间微难",
+      "themeId": "theme_cf1a8231a0",
+      "orderInTheme": 0,
+      "name": {
+        "zh-CN": "房间1",
+        "en": "房间1"
+      },
       "rooms": [
         {
           "id": "r_gvh0nq",
@@ -1394,401 +4174,17 @@ window.LEVELS = {
         "facing": "right",
         "bodyColors": []
       },
-      "passageWidth": 3
-    },
-    {
-      "id": "lv_0ls4vv",
-      "name": "炸弹引入",
-      "rooms": [
-        {
-          "id": "r_glvo7g",
-          "w": 6,
-          "h": 7,
-          "terrain": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              }
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              {
-                "t": "wall"
-              },
-              null,
-              {
-                "t": "wall"
-              }
-            ],
-            [
-              null,
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ],
-          "objects": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              {
-                "o": "spawn"
-              },
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              {
-                "o": "box",
-                "color": "red"
-              },
-              null,
-              {
-                "o": "bomb"
-              },
-              null
-            ],
-            [
-              null,
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              null,
-              {
-                "o": "bean",
-                "color": "blue"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ]
-        },
-        {
-          "id": "r_9tf2hx",
-          "w": 8,
-          "h": 7,
-          "terrain": [
-            [
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              null,
-              {
-                "t": "target",
-                "color": "white"
-              },
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              null
-            ],
-            [
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              {
-                "t": "target",
-                "color": "white"
-              },
-              {
-                "t": "target",
-                "color": "white"
-              },
-              {
-                "t": "wall"
-              },
-              null,
-              {
-                "t": "wall"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              {
-                "t": "target",
-                "color": "blue"
-              },
-              null,
-              null,
-              null
-            ],
-            [
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              {
-                "t": "target",
-                "color": "white"
-              },
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              null
-            ],
-            [
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ],
-          "objects": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              {
-                "o": "bomb"
-              },
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ]
-        }
-      ],
-      "layout": [
-        {
-          "roomId": "r_glvo7g",
-          "x": 0,
-          "y": 0
-        },
-        {
-          "roomId": "r_9tf2hx",
-          "x": 480,
-          "y": 0
-        }
-      ],
-      "start": {
-        "roomId": "r_glvo7g",
-        "x": 1,
-        "y": 2,
-        "facing": "right",
-        "bodyColors": []
-      },
-      "passageWidth": 3
+      "passageWidth": 3,
+      "shadow": null
     },
     {
       "id": "lv_1jk0nh",
-      "name": "炸弹中难",
+      "themeId": "theme_cf1a8231a0",
+      "orderInTheme": 1,
+      "name": {
+        "zh-CN": "房间2",
+        "en": "房间2"
+      },
       "rooms": [
         {
           "id": "r_w5voxb",
@@ -2708,1583 +5104,17 @@ window.LEVELS = {
         "facing": "right",
         "bodyColors": []
       },
-      "passageWidth": 3
-    },
-    {
-      "id": "lv_82lqfg",
-      "name": "数字门引入",
-      "rooms": [
-        {
-          "id": "r_379khy",
-          "w": 6,
-          "h": 5,
-          "terrain": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              }
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              {
-                "t": "door",
-                "n": 3
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              }
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ],
-          "objects": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              {
-                "o": "bean",
-                "color": "blue"
-              },
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              {
-                "o": "spawn"
-              },
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              {
-                "o": "bean",
-                "color": "red"
-              },
-              {
-                "o": "bomb"
-              },
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ]
-        },
-        {
-          "id": "r_kr4mgd",
-          "w": 7,
-          "h": 5,
-          "terrain": [
-            [
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              {
-                "t": "wall"
-              },
-              {
-                "t": "target",
-                "color": "red"
-              },
-              null,
-              null,
-              null,
-              {
-                "t": "target",
-                "color": "white"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              {
-                "t": "target",
-                "color": "white"
-              },
-              null
-            ],
-            [
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              {
-                "t": "target",
-                "color": "blue"
-              },
-              {
-                "t": "target",
-                "color": "red"
-              },
-              null
-            ],
-            [
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ],
-          "objects": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              {
-                "o": "bean",
-                "color": "red"
-              },
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ]
-        }
-      ],
-      "layout": [
-        {
-          "roomId": "r_379khy",
-          "x": 0,
-          "y": 0
-        },
-        {
-          "roomId": "r_kr4mgd",
-          "x": 480,
-          "y": 0
-        }
-      ],
-      "start": {
-        "roomId": "r_379khy",
-        "x": 1,
-        "y": 2,
-        "facing": "right",
-        "bodyColors": []
-      },
-      "passageWidth": 3
-    },
-    {
-      "id": "lv_ko4z0t",
-      "name": "传送门引入",
-      "rooms": [
-        {
-          "id": "r_eh43hh",
-          "w": 6,
-          "h": 6,
-          "terrain": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              {
-                "t": "target",
-                "color": "blue"
-              },
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              {
-                "t": "target",
-                "color": "white"
-              },
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              {
-                "t": "target",
-                "color": "white"
-              },
-              {
-                "t": "target",
-                "color": "white"
-              },
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ],
-          "objects": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              null
-            ],
-            [
-              null,
-              {
-                "o": "spawn"
-              },
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              {
-                "o": "portal",
-                "code": "A",
-                "color": "red"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ]
-        },
-        {
-          "id": "r_wi9pzd",
-          "w": 6,
-          "h": 6,
-          "terrain": [
-            [
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ],
-          "objects": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              {
-                "o": "bean",
-                "color": "blue"
-              },
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              {
-                "o": "portal",
-                "code": "A",
-                "color": "red"
-              },
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ]
-        }
-      ],
-      "layout": [
-        {
-          "roomId": "r_eh43hh",
-          "x": 0,
-          "y": 0
-        },
-        {
-          "roomId": "r_wi9pzd",
-          "x": 560,
-          "y": 0
-        }
-      ],
-      "start": {
-        "roomId": "r_eh43hh",
-        "x": 1,
-        "y": 2,
-        "facing": "right",
-        "bodyColors": []
-      },
-      "passageWidth": 3
-    },
-    {
-      "id": "lv_oi0ibg",
-      "name": "传送门微难",
-      "rooms": [
-        {
-          "id": "r_syzsb1",
-          "w": 6,
-          "h": 6,
-          "terrain": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              {
-                "t": "target",
-                "color": "blue"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              {
-                "t": "target",
-                "color": "white"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ],
-          "objects": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              {
-                "o": "portal",
-                "code": "B",
-                "color": "blue"
-              },
-              null
-            ],
-            [
-              null,
-              {
-                "o": "spawn"
-              },
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              {
-                "o": "portal",
-                "code": "A",
-                "color": "red"
-              },
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ]
-        },
-        {
-          "id": "r_q4phwl",
-          "w": 6,
-          "h": 6,
-          "terrain": [
-            [
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ],
-          "objects": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              {
-                "o": "portal",
-                "code": "A",
-                "color": "red"
-              },
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              {
-                "o": "box",
-                "color": "blue"
-              },
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              {
-                "o": "portal",
-                "code": "B",
-                "color": "blue"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ]
-        }
-      ],
-      "layout": [
-        {
-          "roomId": "r_syzsb1",
-          "x": 0,
-          "y": 0
-        },
-        {
-          "roomId": "r_q4phwl",
-          "x": 720,
-          "y": 0
-        }
-      ],
-      "start": {
-        "roomId": "r_syzsb1",
-        "x": 1,
-        "y": 2,
-        "facing": "right",
-        "bodyColors": []
-      },
-      "passageWidth": 3
-    },
-    {
-      "id": "lv_6y5mr0",
-      "name": "传送门中难",
-      "rooms": [
-        {
-          "id": "r_q0wa2y",
-          "w": 8,
-          "h": 8,
-          "terrain": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              {
-                "t": "target",
-                "color": "white"
-              },
-              {
-                "t": "target",
-                "color": "white"
-              },
-              null,
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              {
-                "t": "target",
-                "color": "green"
-              },
-              null
-            ],
-            [
-              null,
-              {
-                "t": "target",
-                "color": "white"
-              },
-              null,
-              null,
-              null,
-              null,
-              {
-                "t": "wall"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              null,
-              null
-            ],
-            [
-              null,
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ],
-          "objects": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              {
-                "o": "bean",
-                "color": "green"
-              },
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              {
-                "o": "spawn"
-              },
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              {
-                "o": "bomb"
-              },
-              {
-                "o": "portal",
-                "code": "A",
-                "color": "red"
-              },
-              null,
-              null
-            ],
-            [
-              null,
-              {
-                "o": "bean",
-                "color": "blue"
-              },
-              null,
-              null,
-              null,
-              null,
-              {
-                "o": "bomb"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              {
-                "o": "bomb"
-              },
-              null,
-              null,
-              {
-                "o": "bomb"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ]
-        },
-        {
-          "id": "r_i20qts",
-          "w": 6,
-          "h": 6,
-          "terrain": [
-            [
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              {
-                "t": "wall"
-              },
-              null
-            ],
-            [
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              {
-                "t": "wall"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              {
-                "t": "target",
-                "color": "blue"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ],
-          "objects": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              {
-                "o": "bomb"
-              },
-              {
-                "o": "bomb"
-              },
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              {
-                "o": "bean",
-                "color": "green"
-              },
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              {
-                "o": "portal",
-                "code": "A",
-                "color": "red"
-              },
-              null,
-              {
-                "o": "bomb"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ]
-        }
-      ],
-      "layout": [
-        {
-          "roomId": "r_q0wa2y",
-          "x": 0,
-          "y": 0
-        },
-        {
-          "roomId": "r_i20qts",
-          "x": 720,
-          "y": 0
-        }
-      ],
-      "start": {
-        "roomId": "r_q0wa2y",
-        "x": 3,
-        "y": 3,
-        "facing": "right",
-        "bodyColors": [
-          "white",
-          "white"
-        ]
-      },
-      "passageWidth": 3
-    },
-    {
-      "id": "lv_c4pz27",
-      "name": "数字碎砖引入",
-      "rooms": [
-        {
-          "id": "r_qwjng2",
-          "w": 5,
-          "h": 5,
-          "terrain": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              {
-                "t": "target",
-                "color": "white"
-              },
-              null,
-              {
-                "t": "crumble",
-                "n": 3
-              },
-              null
-            ],
-            [
-              null,
-              {
-                "t": "target",
-                "color": "white"
-              },
-              {
-                "t": "crumble",
-                "n": 3
-              },
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ],
-          "objects": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              {
-                "o": "spawn"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ]
-        }
-      ],
-      "layout": [
-        {
-          "roomId": "r_qwjng2",
-          "x": 0,
-          "y": 0
-        }
-      ],
-      "start": {
-        "roomId": "r_qwjng2",
-        "x": 3,
-        "y": 1,
-        "facing": "right",
-        "bodyColors": [
-          "white",
-          "white"
-        ]
-      },
-      "passageWidth": 3
-    },
-    {
-      "id": "lv_z1uhhd",
-      "name": "数字碎砖微难",
-      "rooms": [
-        {
-          "id": "r_syrw9o",
-          "w": 6,
-          "h": 6,
-          "terrain": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              {
-                "t": "wall"
-              }
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              {
-                "t": "crumble",
-                "n": 3
-              },
-              null
-            ],
-            [
-              null,
-              {
-                "t": "crumble",
-                "n": 3
-              },
-              null,
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              }
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ],
-          "objects": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              {
-                "o": "bean",
-                "color": "red"
-              },
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              {
-                "o": "spawn"
-              },
-              {
-                "o": "bean",
-                "color": "blue"
-              },
-              {
-                "o": "bomb"
-              },
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ]
-        },
-        {
-          "id": "r_a34sdx",
-          "w": 4,
-          "h": 6,
-          "terrain": [
-            [
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null
-            ],
-            [
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              {
-                "t": "target",
-                "color": "blue"
-              },
-              null
-            ],
-            [
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              {
-                "t": "crumble",
-                "n": 3
-              },
-              null
-            ],
-            [
-              {
-                "t": "wall"
-              },
-              null,
-              {
-                "t": "target",
-                "color": "white"
-              },
-              null
-            ],
-            [
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null
-            ]
-          ],
-          "objects": [
-            [
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null
-            ]
-          ]
-        }
-      ],
-      "layout": [
-        {
-          "roomId": "r_syrw9o",
-          "x": 0,
-          "y": 0
-        },
-        {
-          "roomId": "r_a34sdx",
-          "x": 480,
-          "y": 0
-        }
-      ],
-      "start": {
-        "roomId": "r_syrw9o",
-        "x": 1,
-        "y": 2,
-        "facing": "right",
-        "bodyColors": []
-      },
-      "passageWidth": 3
+      "passageWidth": 3,
+      "shadow": null
     },
     {
       "id": "lv_cczgdr",
-      "name": "数字碎砖微难2",
+      "themeId": "theme_1ac8fc2493",
+      "orderInTheme": 0,
+      "name": {
+        "zh-CN": "检查1",
+        "en": "检查1"
+      },
       "rooms": [
         {
           "id": "r_z4d6gx",
@@ -4531,291 +5361,17 @@ window.LEVELS = {
         "facing": "right",
         "bodyColors": []
       },
-      "passageWidth": 3
-    },
-    {
-      "id": "lv_0k1yxm",
-      "name": "吃豆子中难",
-      "rooms": [
-        {
-          "id": "r_tc6i1j",
-          "w": 10,
-          "h": 7,
-          "terrain": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              null,
-              {
-                "t": "target",
-                "color": "blue"
-              },
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              {
-                "t": "wall"
-              },
-              null,
-              null,
-              null,
-              null,
-              null,
-              {
-                "t": "target",
-                "color": "green"
-              },
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              {
-                "t": "wall"
-              },
-              null,
-              {
-                "t": "target",
-                "color": "red"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              {
-                "t": "wall"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ],
-          "objects": [
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              null,
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              null,
-              null,
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              {
-                "o": "bean",
-                "color": "blue"
-              },
-              null,
-              null,
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              null,
-              {
-                "o": "box",
-                "color": "red"
-              },
-              null,
-              {
-                "o": "bean",
-                "color": "green"
-              },
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              null,
-              null
-            ],
-            [
-              null,
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              null,
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              null,
-              null
-            ],
-            [
-              null,
-              {
-                "o": "spawn"
-              },
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              {
-                "o": "bean",
-                "color": "white"
-              },
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ]
-          ]
-        }
-      ],
-      "layout": [
-        {
-          "roomId": "r_tc6i1j",
-          "x": 0,
-          "y": 0
-        }
-      ],
-      "start": {
-        "roomId": "r_tc6i1j",
-        "x": 1,
-        "y": 5,
-        "facing": "right",
-        "bodyColors": []
-      },
-      "passageWidth": 3
+      "passageWidth": 3,
+      "shadow": null
     },
     {
       "id": "lv_je9d4m",
-      "name": "关卡10",
+      "themeId": "theme_1ac8fc2493",
+      "orderInTheme": 1,
+      "name": {
+        "zh-CN": "检查2",
+        "en": "检查2"
+      },
       "rooms": [
         {
           "id": "r_7isv1x",
@@ -5358,11 +5914,17 @@ window.LEVELS = {
         "facing": "right",
         "bodyColors": []
       },
-      "passageWidth": 3
+      "passageWidth": 3,
+      "shadow": null
     },
     {
       "id": "lv_k9grr5",
-      "name": "关卡11",
+      "themeId": "theme_1ac8fc2493",
+      "orderInTheme": 2,
+      "name": {
+        "zh-CN": "检查3",
+        "en": "检查3"
+      },
       "rooms": [
         {
           "id": "r_fnu5ok",
@@ -6073,11 +6635,17 @@ window.LEVELS = {
         "facing": "right",
         "bodyColors": []
       },
-      "passageWidth": 3
+      "passageWidth": 3,
+      "shadow": null
     },
     {
       "id": "lv_kc8ftl",
-      "name": "引入世界箱",
+      "themeId": "theme_cea7d54089",
+      "orderInTheme": 0,
+      "name": {
+        "zh-CN": "世界1",
+        "en": "世界1"
+      },
       "rooms": [
         {
           "id": "r_f7sp3t",
@@ -6208,7 +6776,7 @@ window.LEVELS = {
                 },
                 "color": "blue",
                 "_glow": 1,
-                "_glowT": 16223.3929
+                "_glowT": 32703.7847
               },
               null,
               {
@@ -6220,7 +6788,7 @@ window.LEVELS = {
                 },
                 "color": "green",
                 "_glow": 1,
-                "_glowT": 16223.3929
+                "_glowT": 32703.7847
               },
               null,
               null
@@ -6237,7 +6805,7 @@ window.LEVELS = {
                 },
                 "color": "green",
                 "_glow": 1,
-                "_glowT": 16223.3929
+                "_glowT": 32703.7847
               },
               null,
               null,
@@ -6614,11 +7182,17 @@ window.LEVELS = {
           "white"
         ]
       },
-      "passageWidth": 1
+      "passageWidth": 1,
+      "shadow": null
     },
     {
       "id": "lv_47ye6q",
-      "name": "世界箱微难",
+      "themeId": "theme_cea7d54089",
+      "orderInTheme": 1,
+      "name": {
+        "zh-CN": "世界2",
+        "en": "世界2"
+      },
       "rooms": [
         {
           "id": "r_u99dsf",
@@ -6710,7 +7284,7 @@ window.LEVELS = {
                 },
                 "color": "blue",
                 "_glow": 1,
-                "_glowT": 1085.2645
+                "_glowT": 98.851
               },
               null,
               null
@@ -6727,7 +7301,7 @@ window.LEVELS = {
                 },
                 "color": "red",
                 "_glow": 1,
-                "_glowT": 1085.2645
+                "_glowT": 98.851
               },
               null,
               null,
@@ -6901,7 +7475,265 @@ window.LEVELS = {
         "facing": "right",
         "bodyColors": []
       },
-      "passageWidth": 1
+      "passageWidth": 1,
+      "shadow": null
+    },
+    {
+      "id": "lv_wq81cb",
+      "themeId": "theme_1aec9722b6",
+      "orderInTheme": 0,
+      "name": {
+        "zh-CN": "新关卡",
+        "en": "新关卡"
+      },
+      "rooms": [
+        {
+          "id": "r_1keyaf",
+          "w": 8,
+          "h": 9,
+          "terrain": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "t": "target",
+                "color": "red"
+              },
+              null,
+              {
+                "t": "target",
+                "color": "black"
+              },
+              {
+                "t": "target",
+                "color": "white"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "red"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "o": "spawn"
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        }
+      ],
+      "layout": [
+        {
+          "roomId": "r_1keyaf",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "start": {
+        "roomId": "r_1keyaf",
+        "x": 1,
+        "y": 7,
+        "facing": "right",
+        "bodyColors": []
+      },
+      "passageWidth": 3,
+      "shadow": {
+        "roomId": "r_1keyaf",
+        "x": 3,
+        "y": 2,
+        "facing": "right",
+        "bodyColors": [
+          "white",
+          "white"
+        ]
+      }
     }
   ]
 };
