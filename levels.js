@@ -876,16 +876,27 @@ window.LEVELS = {
             ],
             [
               null,
+              {
+                "t": "wall"
+              },
               null,
-              null,
-              null,
-              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
               null
             ],
             [
               null,
-              null,
-              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "target",
+                "color": "white"
+              },
               {
                 "t": "target",
                 "color": "white"
@@ -901,15 +912,25 @@ window.LEVELS = {
                 "t": "target",
                 "color": "red"
               },
-              null,
+              {
+                "t": "wall"
+              },
               null
             ],
             [
               null,
-              null,
-              null,
-              null,
-              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
               {
                 "t": "wall"
               }
@@ -944,16 +965,21 @@ window.LEVELS = {
               null,
               null,
               null,
-              null,
-              null,
+              {
+                "o": "box",
+                "color": "red"
+              },
+              {
+                "o": "bomb"
+              },
               null
             ],
             [
               null,
+              null,
               {
                 "o": "spawn"
               },
-              null,
               null,
               null,
               null
@@ -994,15 +1020,25 @@ window.LEVELS = {
               {
                 "t": "wall"
               },
-              null,
-              null,
-              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
               null
             ],
             [
               null,
-              null,
-              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
               null,
               null
             ],
@@ -1017,7 +1053,9 @@ window.LEVELS = {
               {
                 "t": "wall"
               },
-              null,
+              {
+                "t": "wall"
+              },
               null,
               null,
               null
@@ -1095,10 +1133,12 @@ window.LEVELS = {
       ],
       "start": {
         "roomId": "r_dsqwqe",
-        "x": 1,
+        "x": 2,
         "y": 3,
         "facing": "right",
-        "bodyColors": []
+        "bodyColors": [
+          "white"
+        ]
       },
       "passageWidth": 3,
       "shadow": null
@@ -7734,6 +7774,282 @@ window.LEVELS = {
           "white"
         ]
       }
+    },
+    {
+      "id": "lv_91z9m1",
+      "themeId": "theme_938836ba18",
+      "orderInTheme": 2,
+      "name": {
+        "zh-CN": "新关卡",
+        "en": "新关卡"
+      },
+      "rooms": [
+        {
+          "id": "r_0racj5",
+          "w": 10,
+          "h": 7,
+          "terrain": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "t": "target",
+                "color": "red"
+              },
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              {
+                "t": "target",
+                "color": "white"
+              },
+              {
+                "t": "target",
+                "color": "white"
+              },
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              {
+                "t": "target",
+                "color": "white"
+              },
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              {
+                "t": "wall"
+              },
+              null,
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "wall"
+              },
+              null,
+              {
+                "t": "wall"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "t": "target",
+                "color": "white"
+              },
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          "objects": [
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null,
+              null,
+              {
+                "o": "box",
+                "color": "red"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              {
+                "o": "spawn"
+              },
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              {
+                "o": "bean",
+                "color": "white"
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        }
+      ],
+      "layout": [
+        {
+          "roomId": "r_0racj5",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "start": {
+        "roomId": "r_0racj5",
+        "x": 1,
+        "y": 5,
+        "facing": "right",
+        "bodyColors": []
+      },
+      "passageWidth": 3,
+      "shadow": null
     }
   ]
 };
